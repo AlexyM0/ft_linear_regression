@@ -10,6 +10,7 @@ int main()
     {
         Calcul calcul("data.csv");
         calcul.train();
+        calcul.save();
     }
     catch(const char* e)
     {

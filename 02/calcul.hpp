@@ -15,7 +15,7 @@ class Calcul
         long long count_line;
         double theta0 = 0;
         double theta1 = 0;
-        double learningRate = 0.0000001;
+        double learningRate = 0.01;
         int iterations = 1000; 
 
     public:
@@ -51,7 +51,7 @@ class Calcul
             for (size_t i = 0; i < _km.size(); i++)
                 _km[i] /= 100000.0;
             for (size_t i = 0; i < _price.size(); i++)
-                _price[i] /= 10000.0;
+                _price[i] /= 1000.0;
         }
 
     void train()
@@ -80,6 +80,15 @@ class Calcul
         std::cout << "Training finished\n";
         std::cout << "theta0 = " << theta0 << std::endl;
         std::cout << "theta1 = " << theta1 << std::endl;
+    }
+    void save()
+    {
+        std::ofstream file("thetas.txt");
+        if (!file.is_open())
+            throw "Cannot open file to save thetas";
+
+        file << theta0 << " " << theta1;
+        file.close();
     }
 
 };
