@@ -12,7 +12,7 @@ class Calcul
 
         std::vector<double> _km, _price;
         std::string _file;
-        long long count_line;
+        size_t count_line;
         double theta0 = 0;
         double theta1 = 0;
         double learningRate = 0.01;
