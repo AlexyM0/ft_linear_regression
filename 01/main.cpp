@@ -16,18 +16,16 @@ void loadThetas()
     }
     else
     {
-        std::cout << "No trained thetas found. Using default (0, 0).\n";
+        std::cout << "No trained thetas found.\n";
     }
 }
 
 double estimatePrice(double mileage)
 {
-    // NORMALISATION (comme dans training)
     mileage /= 100000.0;
 
     double price = theta0 + (theta1 * mileage);
 
-    // DENORMALISATION
     price *= 1000.0;
 
     return price;
@@ -35,7 +33,7 @@ double estimatePrice(double mileage)
 
 int main()
 {
-    loadThetas(); // 🔥 important
+    loadThetas();
 
     double mileage;
 

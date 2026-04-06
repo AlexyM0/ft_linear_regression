@@ -36,12 +36,29 @@ class Calcul
                 std::string token;
                 double k, p;
 
-                std::getline(ss, token, ',');
-                k = std::stod(token);
+                if (!std::getline(ss, token, ','))
+                    throw "Missing km value";
 
-                std::getline(ss, token, ',');
-                p = std::stod(token);
+                try
+                {
+                    k = std::stod(token);
+                } catch (...) {
+                    throw "Invalid km value";
+                }
 
+                if (!std::getline(ss, token, ','))
+                    throw "Missing price value";
+
+                try
+                {
+                    p = std::stod(token);
+                } catch (...) {
+                    throw "Invalid price value";
+                }
+
+                if (k < 0 || p < 0)
+                    throw "Negative values are not allowed";
+                    
                 _km.emplace_back(k);
                 _price.emplace_back(p);
             }
