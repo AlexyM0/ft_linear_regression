@@ -15,7 +15,7 @@ class Calcul
         size_t count_line;
         double theta0 = 0;
         double theta1 = 0;
-        double learningRate = 0.01;
+        double learningRate = 0.1;
         int iterations = 1000; 
 
     public:
@@ -58,7 +58,7 @@ class Calcul
 
                 if (k < 0 || p < 0)
                     throw "Negative values are not allowed";
-                    
+
                 _km.emplace_back(k);
                 _price.emplace_back(p);
             }
