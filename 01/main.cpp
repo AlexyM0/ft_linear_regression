@@ -22,11 +22,8 @@ void loadThetas()
 
 double estimatePrice(double mileage)
 {
-    mileage /= 100000.0;
 
     double price = theta0 + (theta1 * mileage);
-
-    price *= 1000.0;
 
     return price;
 }

@@ -92,12 +92,16 @@ class Calcul
 
             theta0 = theta0 - tmp0;
             theta1 = theta1 - tmp1;
+            
         }
 
+        theta0 = theta0 * 1000;
+        theta1 = theta1 * (1000.0 / 100000.0);
         std::cout << "Training finished\n";
         std::cout << "theta0 = " << theta0 << std::endl;
         std::cout << "theta1 = " << theta1 << std::endl;
     }
+    
     void save()
     {
         std::ofstream file("thetas.txt");
