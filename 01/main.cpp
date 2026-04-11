@@ -25,6 +25,9 @@ double estimatePrice(double mileage)
 
     double price = theta0 + (theta1 * mileage);
 
+    if (price < 0)
+        price = 0;
+
     return price;
 }
 
